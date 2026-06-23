@@ -32,15 +32,15 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello, I&apos;m an indie app developer based in Japan!
+        Hello, I&apos;m a Computer Science student based in Ho Chi Minh City!
       </Box>
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Takuya Matsuyama
+            Le Nam Tien
           </Heading>
-          <p>Digital Craftsman ( Artist / Developer / Designer )</p>
+          <p>Computer Science Student ( Coder / AI Enthusiast / Tech Explorer )</p>
         </Box>
         <Box
           flexShrink={0}
@@ -59,7 +59,7 @@ const Home = () => (
             overflow="hidden"
           >
             <Image
-              src="/images/takuya.jpg"
+              src="/images/profile.jpg"
               alt="Profile image"
               width="100"
               height="100"
@@ -73,26 +73,13 @@ const Home = () => (
           Work
         </Heading>
         <Paragraph>
-          Takuya is a freelance and a full-stack developer based in Osaka with a
-          passion for building digital services/stuff he wants. He has a knack
-          for all things launching products, from planning and designing all the
-          way to solving real-life problems with code. When not online, he loves
-          hanging out with his camera. Currently, he is living off of his own
-          product called{' '}
-          <Link as={NextLink} href="/works/inkdrop" passHref scroll={false}>
-            Inkdrop
-          </Link>
-          . He publishes content for marketing his products and his YouTube
-          channel called &quot;
-          <Link
-            as={NextLink}
-            href="https://www.youtube.com/devaslife"
-            passHref
-            target="_blank"
-          >
-            Dev as Life
-          </Link>
-          &quot; has more than 200k subscribers.
+          Le Nam Tien is a Computer Science student at Ho Chi Minh City University
+          of Technology (HCMUT) with a passion for competitive programming and AI
+          research. He has a strong interest in model quantization, microcontroller
+          programming, and building practical solutions with code. When not coding,
+          he enjoys participating in programming competitions like Codeforces and
+          AtCoder. He is actively conducting AI research and exploring advanced
+          techniques in machine learning and optimization.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -112,22 +99,16 @@ const Home = () => (
           Bio
         </Heading>
         <BioSection>
-          <BioYear>1984</BioYear>
-          Born in Osaka (大阪), Japan.
+          <BioYear>2024</BioYear>
+          Started Bachelor&apos;s Degree in Computer Science at HCMUT
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
-          Completed the Master&apos;s Program in the Graduate School of
-          Information Science at Nara Institute of Science and Technology
-          (奈良先端科学技術大学院大学情報科学研究科修士課程)
+          <BioYear>2025</BioYear>
+          Participated in HCMC AI Challenge and Bach Khoa Code Challenge
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
-          Worked at Yahoo! Japan (ヤフー株式会社入社)
-        </BioSection>
-        <BioSection>
-          <BioYear>2012 to present</BioYear>
-          Working as a freelancer
+          <BioYear>2026</BioYear>
+          Conducting research in AI and joined GenAI4E program
         </BioSection>
       </Section>
 
@@ -136,15 +117,15 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
+          Competitive Programming ({' '}
+          <Link href="https://codeforces.com" target="_blank">
+            Codeforces
           </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
+          , {' '}
+          <Link href="https://atcoder.jp" target="_blank">
+            AtCoder
           </Link>
-          , Leica, Machine Learning
+          ), Model Quantization, Microcontrollers, Machine Learning, Open Source
         </Paragraph>
       </Section>
 
@@ -154,46 +135,35 @@ const Home = () => (
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/craftzdog" target="_blank">
+            <Link href="https://github.com/yourgithub" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<IoLogoGithub />}
               >
-                @craftzdog
+                @yourgithub
               </Button>
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
+            <Link href="https://twitter.com/yourtwitter" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<IoLogoTwitter />}
               >
-                @inkdrop_app (English)
+                @yourtwitter
               </Button>
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @craftzdog (日本語)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
+            <Link href="https://instagram.com/yourinstagram" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<IoLogoInstagram />}
               >
-                @craftzdog
+                @yourinstagram
               </Button>
             </Link>
           </ListItem>
@@ -201,38 +171,38 @@ const Home = () => (
 
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            href="https://www.youtube.com/devaslife"
-            title="Dev as Life"
+            href="https://codeforces.com"
+            title="Codeforces"
             thumbnail={thumbYouTube}
           >
-            My YouTube channel (&gt;200k subs)
+            Competitive Programming Platform
           </GridItem>
           <GridItem
-            href="https://www.inkdrop.app/"
-            title="Inkdrop"
+            href="https://atcoder.jp/"
+            title="AtCoder"
             thumbnail={thumbInkdrop}
           >
-            A Markdown note-taking app
+            Japanese Programming Contest
           </GridItem>
         </SimpleGrid>
 
         <Heading as="h3" variant="section-title">
-          Newsletter
+          Contact
         </Heading>
         <p>
-          Join me on a behind-the-scenes coding journey. Weekly updates on
-          projects, tutorials, and videos
+          Feel free to reach out if you want to collaborate or discuss AI, competitive
+          programming, and tech innovations.
         </p>
 
         <Box align="center" my={4}>
           <Button
             as={NextLink}
-            href="https://www.devas.life/"
+            href="mailto:your.email@example.com"
             scroll={false}
             leftIcon={<EmailIcon />}
             colorScheme="teal"
           >
-            Sign up my newsletter here
+            Send me an email
           </Button>
         </Box>
       </Section>
