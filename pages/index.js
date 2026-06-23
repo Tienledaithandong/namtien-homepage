@@ -4,21 +4,17 @@ import {
   Container,
   Heading,
   Box,
-  SimpleGrid,
   Button,
   List,
   ListItem,
   useColorModeValue
 } from '@chakra-ui/react'
-import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
+import { EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { GridItem } from '../components/grid-item'
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 import Image from 'next/image'
 
 const Home = () => (
@@ -70,28 +66,14 @@ const Home = () => (
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-          Work
+          About
         </Heading>
         <Paragraph>
-          Le Nam Tien is a Computer Science student at Ho Chi Minh City University
-          of Technology (HCMUT) with a passion for competitive programming and AI
-          research. He has a strong interest in model quantization, microcontroller
-          programming, and building practical solutions with code. When not coding,
-          he enjoys participating in programming competitions like Codeforces and
-          AtCoder. He is actively conducting AI research and exploring advanced
-          techniques in machine learning and optimization.
+          Computer Science student at Ho Chi Minh City University of Technology (HCMUT).
+          Passionate about competitive programming, AI research, and building practical
+          solutions with code. Interested in model quantization, microcontrollers, and
+          machine learning optimization.
         </Paragraph>
-        <Box align="center" my={4}>
-          <Button
-            as={NextLink}
-            href="/works"
-            scroll={false}
-            rightIcon={<ChevronRightIcon />}
-            colorScheme="teal"
-          >
-            My portfolio
-          </Button>
-        </Box>
       </Section>
 
       <Section delay={0.2}>
@@ -168,23 +150,6 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
-
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            href="https://codeforces.com"
-            title="Codeforces"
-            thumbnail={thumbYouTube}
-          >
-            Competitive Programming Platform
-          </GridItem>
-          <GridItem
-            href="https://atcoder.jp/"
-            title="AtCoder"
-            thumbnail={thumbInkdrop}
-          >
-            Japanese Programming Contest
-          </GridItem>
-        </SimpleGrid>
 
         <Heading as="h3" variant="section-title">
           Contact
