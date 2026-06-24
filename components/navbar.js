@@ -77,6 +77,9 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
+          <LinkItem href="/blogs" path={path}>
+            Blogs
+          </LinkItem>
           <LinkItem
             target="_blank"
             href="https://github.com/Tienledaithandong/namtien-homepage"
@@ -105,6 +108,9 @@ const Navbar = props => {
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
                   About
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/blogs">
+                  Blogs
                 </MenuItem>
                 <MenuItem
                   as={Link}

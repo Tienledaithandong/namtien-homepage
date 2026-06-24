@@ -7,7 +7,10 @@ import {
   Button,
   List,
   ListItem,
-  useColorModeValue
+  useColorModeValue,
+  HStack,
+  Badge,
+  VStack
 } from '@chakra-ui/react'
 import { EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -16,27 +19,53 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
+
+const DynamicCodeRain = dynamic(() => import('../components/code-rain'), {
+  ssr: false
+})
 
 const Home = () => (
   <Layout>
+    <Box position="relative" pb={8}>
+      <DynamicCodeRain />
+    </Box>
+
     <Container>
       <Box
         borderRadius="lg"
         mb={6}
-        p={3}
+        p={4}
         textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{ backdropFilter: 'blur(10px)' }}
+        bg={useColorModeValue('teal.50', 'rgba(0, 128, 128, 0.1)')}
+        borderLeft="4px solid"
+        borderColor="teal"
+        css={{
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 0 20px rgba(0, 128, 128, 0.2)'
+        }}
       >
-        Hello, I&apos;m a Computer Science student based in Ho Chi Minh City!
+        <code style={{ fontSize: '14px', fontWeight: 'bold' }}>
+          $ ./welcome.sh
+        </code>
+        <p style={{ marginTop: '10px', fontSize: '14px' }}>
+          &gt; Hello, I&apos;m a Computer Science student with a passion for code
+        </p>
       </Box>
 
-      <Box display={{ md: 'flex' }}>
+      <Box display={{ md: 'flex' }} mb={8}>
         <Box flexGrow={1}>
-          <Heading as="h2" variant="page-title">
-            Le Nam Tien
+          <Heading as="h2" variant="page-title" mb={2}>
+            <code>&lt;namtiene /&gt;</code>
           </Heading>
-          <p>Computer Science Student ( Coder / AI Enthusiast / Tech Explorer )</p>
+          <HStack spacing={2} mb={2}>
+            <Badge colorScheme="teal" variant="solid">Coder</Badge>
+            <Badge colorScheme="blue" variant="solid">AI Enthusiast</Badge>
+            <Badge colorScheme="purple" variant="solid">Tech Explorer</Badge>
+          </HStack>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', marginBottom: '10px' }}>
+            // Computer Science Student @ HCMUT
+          </p>
         </Box>
         <Box
           flexShrink={0}
@@ -45,20 +74,21 @@ const Home = () => (
           textAlign="center"
         >
           <Box
-            borderColor="whiteAlpha.800"
-            borderWidth={2}
+            borderColor="teal"
+            borderWidth={3}
             borderStyle="solid"
-            w="100px"
-            h="100px"
+            w="120px"
+            h="120px"
             display="inline-block"
             borderRadius="full"
             overflow="hidden"
+            boxShadow="0 0 20px rgba(0, 128, 128, 0.3)"
           >
             <Image
               src="/images/profile.jpg"
               alt="Profile image"
-              width="100"
-              height="100"
+              width="120"
+              height="120"
             />
           </Box>
         </Box>
@@ -66,19 +96,19 @@ const Home = () => (
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-          About
+          <code>// About()</code>
         </Heading>
         <Paragraph>
           Computer Science student at Ho Chi Minh City University of Technology (HCMUT).
           Passionate about competitive programming, AI research, and building practical
           solutions with code. Interested in model quantization, microcontrollers, and
-          machine learning optimization.
+          machine learning optimization. Always exploring new technologies and pushing boundaries.
         </Paragraph>
       </Section>
 
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
-          Bio
+          <code>// Timeline()</code>
         </Heading>
         <BioSection>
           <BioYear>2024</BioYear>
@@ -96,24 +126,31 @@ const Home = () => (
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          I ♥
+          <code>// Skills ♥</code>
         </Heading>
         <Paragraph>
-          Competitive Programming ({' '}
-          <Link href="https://codeforces.com" target="_blank">
+          <Badge colorScheme="cyan" mr={2}>Competitive Programming</Badge>
+          <Badge colorScheme="purple" mr={2}>AI/ML</Badge>
+          <Badge colorScheme="blue" mr={2}>Microcontrollers</Badge>
+          <Badge colorScheme="green" mr={2}>Model Optimization</Badge>
+          <Badge colorScheme="orange">Open Source</Badge>
+        </Paragraph>
+        <Paragraph>
+          Passionate about{' '}
+          <Link href="https://codeforces.com" target="_blank" color="teal" fontWeight="bold">
             Codeforces
           </Link>
-          , {' '}
-          <Link href="https://atcoder.jp" target="_blank">
+          {' '}and{' '}
+          <Link href="https://atcoder.jp" target="_blank" color="teal" fontWeight="bold">
             AtCoder
           </Link>
-          ), Model Quantization, Microcontrollers, Machine Learning, Open Source
+          . Always learning and improving my problem-solving skills.
         </Paragraph>
       </Section>
 
-      <Section delay={0.3}>
+      <Section delay={0.4}>
         <Heading as="h3" variant="section-title">
-          On the web
+          <code>// Connect()</code>
         </Heading>
         <List>
           <ListItem>
@@ -150,14 +187,22 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
+      </Section>
 
+      <Section delay={0.5}>
         <Heading as="h3" variant="section-title">
-          Contact
+          <code>// Get In Touch</code>
         </Heading>
-        <p>
-          Feel free to reach out if you want to collaborate or discuss AI, competitive
-          programming, and tech innovations.
-        </p>
+        <Box
+          p={4}
+          borderRadius="lg"
+          bg={useColorModeValue('blue.50', 'rgba(0, 0, 255, 0.05)')}
+          borderLeft="4px solid"
+          borderColor="blue"
+          mb={4}
+        >
+          <p>Feel free to reach out if you want to collaborate or discuss AI, competitive programming, and tech innovations.</p>
+        </Box>
 
         <Box align="center" my={4}>
           <Button
@@ -166,11 +211,26 @@ const Home = () => (
             scroll={false}
             leftIcon={<EmailIcon />}
             colorScheme="teal"
+            size="lg"
           >
             Send me an email
           </Button>
         </Box>
       </Section>
+
+      <Box
+        mt={12}
+        p={6}
+        borderRadius="lg"
+        bg={useColorModeValue('gray.50', 'rgba(128, 128, 128, 0.1)')}
+        borderLeft="4px solid"
+        borderColor="gray"
+        textAlign="center"
+      >
+        <code style={{ fontSize: '12px' }}>
+          echo "Thanks for visiting! 🚀" | ./spread_the_word.sh
+        </code>
+      </Box>
     </Container>
   </Layout>
 )
