@@ -8,7 +8,7 @@ const Canvas = styled.canvas`
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.15;
+  opacity: 0.1;
   pointer-events: none;
 `
 
@@ -21,34 +21,41 @@ const CodeRain = () => {
 
     const ctx = canvas.getContext('2d')
     canvas.width = window.innerWidth
-    canvas.height = 200
+    canvas.height = 120
 
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン'
+    const chars = '01アイウエオ'
     const charArray = chars.split('')
-    const fontSize = 16
-    const columns = canvas.width / fontSize
+    const fontSize = 12
+    const columns = Math.floor(canvas.width / fontSize)
 
     const drops = Array(Math.floor(columns))
       .fill(0)
       .map(() => Math.random() * canvas.height)
 
     let animationId
+    let frameCount = 0
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+      frameCount++
+      if (frameCount % 2 !== 0) {
+        animationId = requestAnimationFrame(draw)
+        return
+      }
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.02)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       ctx.fillStyle = '#0f0'
-      ctx.font = `${fontSize}px "Courier New"`
+      ctx.font = `${fontSize}px monospace`
 
       for (let i = 0; i < drops.length; i++) {
         const text = charArray[Math.floor(Math.random() * charArray.length)]
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
+        ctx.fillText(text, i * fontSize, drops[i])
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (drops[i] > canvas.height && Math.random() > 0.98) {
           drops[i] = 0
         }
-        drops[i] += Math.random() * 0.5 + 0.1
+        drops[i] += Math.random() * 0.2 + 0.05
       }
 
       animationId = requestAnimationFrame(draw)
